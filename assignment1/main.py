@@ -19,9 +19,4 @@ print("Even: {0}".format(sorted_list[1::2]))
 print("Odd: {0}".format(sorted_list[::2]))
 
 # afișarea elementelor multipli ai lui 3.
-_multiples = []
-for i in initial_list:
-    if i % 3 == 0:
-        _multiples.append(i)
-
-print("multiples of 3 in the initial list: {0}".format(_multiples))
+print("multiples of 3: {0}".format(sorted_list[2::3]))
