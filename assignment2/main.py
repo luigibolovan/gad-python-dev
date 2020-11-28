@@ -42,15 +42,15 @@ def recursive_odd_sum(int_num):
 # [sum(0,n), sum_even(0,n), sum_odd(0,n)]
 def recursive_sums(int_num):
     if int_num == 0:
-        return [0, 0, 0]
+        return 0, 0, 0
 
-    return [recursive_sums(int_num - 1)[0] + int_num,
+    return (recursive_sums(int_num - 1)[0] + int_num,
             recursive_sums(int_num - 1)[1] + (int_num if int_num % 2 == 0 else 0),
-            recursive_sums(int_num - 1)[2] + (int_num if int_num % 2 != 0 else 0)]
+            recursive_sums(int_num - 1)[2] + (int_num if int_num % 2 != 0 else 0))
 
 
-sum_lists = recursive_sums(5)
-print(f'Suma [0,n]: {sum_lists[0]}; Suma pare [0,n]: {sum_lists[1]}; Suma impare [0,n]: {sum_lists[2]};\n')
+sums = recursive_sums(5)
+print(f'Suma [0,n]: {sums[0]}; Suma pare [0,n]: {sums[1]}; Suma impare [0,n]: {sums[2]};\n')
 
 
 # Să se scrie o funcție care citește de la tastatură și returnează valoarea dacă aceasta este un număr întreg,
