@@ -44,9 +44,15 @@ def recursive_sums(int_num):
     if int_num == 0:
         return 0, 0, 0
 
-    return (recursive_sums(int_num - 1)[0] + int_num,
-            recursive_sums(int_num - 1)[1] + (int_num if int_num % 2 == 0 else 0),
-            recursive_sums(int_num - 1)[2] + (int_num if int_num % 2 != 0 else 0))
+    n_sum, n_sum_even, n_sum_odd = recursive_sums(int_num - 1)
+
+    n_sum += int_num
+    if int_num % 2 == 0:
+        n_sum_even += int_num
+    else:
+        n_sum_odd += int_num
+
+    return n_sum, n_sum_even, n_sum_odd
 
 
 sums = recursive_sums(5)
